@@ -1,0 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(30, 30, 30);
+    font-family: 'Inter', 'Robot', 'IBM Plex Sans', sans-serif;
+    font-variant-numeric: tabular-nums lining-nums;
+}
