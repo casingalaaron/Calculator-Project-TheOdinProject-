@@ -31,6 +31,7 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         currentBtnClick = button.dataset.button
         inputHolder += button.dataset.button
+        console.log(`Input Holder: ${inputHolder}`)
         result.textContent = inputHolder
 
 
@@ -38,28 +39,30 @@ buttons.forEach((button) => {
             case '+':
                 result.textContent = currentBtnClick
                 operator = currentBtnClick
+                currentTotal += total
                 currentTotal += parseInt(inputHolder)
+                console.log(`plus section\nCurrent total = ${currentTotal}\nTotal = ${total}`)
                 inputHolder = ""
                 break;
             case '-':
                 result.textContent = currentBtnClick
                 operator = currentBtnClick
-                inputHolder = ""
+                currentTotal
+                currentTotal -= parseInt(inputHolder)
+                console.log(`minus section\nCurrent total = ${currentTotal}\nTotal = ${total}`)
                 break;
             case '*':
-                operator = button.dataset.button
-                result.textContent = "\u002A"
-                inputHolder = ""
+                console.log(`times section\nCurrent total = ${currentTotal}\nTotal = ${total}`)
                 break;
             case '/':
-                operator = button.dataset.button
-                result.textContent = "\u00F7"
-                inputHolder = ""
+               console.log(`divide section\nCurrent total = ${currentTotal}\nTotal = ${total}`)
                 break;
             case '=':
                 total = operate(operator, parseInt(currentTotal), parseInt(inputHolder))
                 result.textContent = total
-                inputHolder = total
+                currentTotal = 0
+                inputHolder = 0
+                console.log(`equal section\nCurrent total = ${currentTotal}\n Total = ${total}`)
                 break;
             case 'del':
                 operator = button.dataset.button
